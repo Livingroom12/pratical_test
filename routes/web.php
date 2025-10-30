@@ -7,13 +7,11 @@ use App\Http\Controllers\Auth\AdminLoginController;
 use App\Http\Controllers\Admin\AdminController;
 use Illuminate\Support\Facades\Auth;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 
 // Register
-Route::get('/register/customer', [RegisterController::class, 'showCustomerRegistration'])->name('register.customer');
+Route::get('/', [RegisterController::class, 'showCustomerRegistration'])->name('register.customer');
 Route::post('/register/customer', [RegisterController::class, 'registerCustomer']);
 
 Route::get('/register/admin', [RegisterController::class, 'showAdminRegistration'])->name('register.admin');
